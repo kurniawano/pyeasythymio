@@ -164,11 +164,12 @@ class EasyThymio:
         self.__aseba_code = f"call sound.replay({sound_id})"
         self.run_command(self.actuators)
 
-
-
     def wheels(self, left, right):
         self.__aseba_code = f"motor.left.target={left}\nmotor.right.target={right}"
         self.run_command(self.actuators)
+
+    def sleep(self, duration):
+        time.sleep(duration)
 
 if __name__ == "__main__":
     et = EasyThymio()

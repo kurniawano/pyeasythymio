@@ -1,7 +1,7 @@
 # Template BoundaryFollower
 
 #from robotar import RobotAR
-from easythymio import EasyThymio
+from pyeasythymio import EasyThymio
 
 class StateMachine:
   def start(self):
@@ -42,6 +42,7 @@ class MyRobot(EasyThymio):
     self.behaviour.start()
     while not self.behaviour.is_done():
       self.update()
+    self.stop()
       
   def update(self):
     output = self.behaviour.step(self)
@@ -52,9 +53,14 @@ class BoundaryFollower(StateMachine):
   def get_next_values(self, state, inp):
     left,right = inp.prox_ground.delta
     print(left, right)
+    if inp.button_center == 1:
+        return 'done', (0,0)
     next_state = state
     output = (50, 50)
     return next_state, output
+
+  def done(self, state):
+    return state == 'done'
 
 sm = BoundaryFollower()   
 robot = MyRobot(sm)

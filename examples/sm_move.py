@@ -1,4 +1,4 @@
-from pyeasythymio import ThymioSM
+from pyeasythymio import ThymioSM, StateMachine
 
 class BoundaryFollower(StateMachine):
     start_state = 0

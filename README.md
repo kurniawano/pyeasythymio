@@ -12,7 +12,7 @@ python -m pip install pyeasythymio --upgrade
 
 ## Requirements
 
-First, you need to make sure that you have [Thymio Suite](https://www.thymio.org/download-thymio-suite/) downloaded. 
+First, you need to make sure that you have [Thymio Suite](https://www.thymio.org/download-thymio-suite/) downloaded. Before you run any Python script with `pyeasythymio` library, open and run the Thymio Suite. You can leave it at the background while writing your code in Python. At the bottom left of Thymio Suite, make sure you can see "Discovery service enabled". This allows your computer to find and connect to the Thymio-II robot.
 
 ## Usage
 
